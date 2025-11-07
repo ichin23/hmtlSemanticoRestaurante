@@ -1,0 +1,92 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #4F341F;
+    --background: #ffe9d9;
+}
+
+body{
+    background-color: var(--background);
+}
+
+header{
+    position: relative;
+    width: 100vw;
+    height: 80px;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--primary);
+}
+
+#logoHeader {
+    position: absolute;
+    display: flex;
+    left: 0;
+    align-items: center;
+    color: var(--primary);
+    margin-right: auto;
+}
+
+#logoHeader>img{
+    width: 80px;
+    padding: 20px 10px;
+}
+header > nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav hr{
+    width: 0;
+    border: 1px solid var(--primary);
+    transition: all 200ms;
+}
+
+a:hover ~ hr{
+    width: 100%;
+}
+
+nav>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header>nav>div>a{
+    text-decoration: none;
+    color: var(--primary);
+}
+
+#pratoDia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+#pratoDia > h2 {
+    padding: 20px;
+}
+
+#pratoDia > figure {
+    display: flex;
+    gap: 20px;
+}
+#pratoDia > figure > img {
+    border-radius: 12px;
+}
+#pratoDia > figure > figcaption {
+    border: 1px solid var(--primary);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+main > hgroup > p{
+    font-size: 20px;
+}
