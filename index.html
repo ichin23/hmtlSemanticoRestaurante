@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Massa Massa</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
     <header>
-        <div id="logoHeader">
-            <img src="assets/logo.png" />
-            <h1>Massa Massa</h1>
+        <input id="showMenu" type="checkbox"/>
+        <div>
+            <div id="logoHeader">
+                <img src="assets/logo.png" />
+                <h1>Massa Massa</h1>
+            </div>
+            <label for="showMenu">
+                <span class="material-symbols-outlined">menu</span>
+            </label>
         </div>
-        <nav>
+        <nav id="navMenu">
             <div>
                 <a href="#pratoDia">Prato do Dia</a>
                 <hr />
@@ -25,19 +32,236 @@
                 <a href="#sobre">Sobre</a>
                 <hr />
             </div>
+            <div>
+                <a href="#fundadores">Fundadores</a>
+                <hr />
+            </div>
         </nav>
     </header>
-    <main id="pratoDia">
+    <section id="pratoDia">
         <h2>Prato do Dia</h2>
         <figure>
-            <img src="assets/tortellini.webp" alt="Prato Tortellini Três Queijos" />
-            <figcaption><h2>Tortellini Três Queijos</h2>
-            <p>Nosso prato do dia é aquela massa caprichada com o toque mágico dos Três Queijos (Brie, Parmeggiano e Mozzarella di Bufala). Uma combinação cremosa, rica em sabor e com a textura perfeita para quem aprecia uma refeição memorável.<br/>
-                Feita com ingredientes selecionados e finalizada com um leve toque de manteiga e ervas frescas, essa massa promete uma experiência que conforta, encanta e surpreende a cada garfada.
-                Experimente hoje mesmo e sinta o sabor que faz a diferença.<br/>
-                Perfeito para o almoço, para renovar as energias, ou para um jantar especial. Bon appétit! 🍝✨
-            </p></figcaption>
+            <img src="assets/tortellini.png" alt="Prato Tortellini Três Queijos" />
+            <figcaption>
+                <h2>Tortellini Três Queijos</h2>
+                <p>Nosso prato do dia é aquela massa caprichada com o toque mágico dos Três Queijos (Brie, Parmeggiano e Mozzarella di Bufala). Uma combinação cremosa, rica em sabor e com a textura perfeita para quem aprecia uma refeição memorável.<br/>
+                    Feita com ingredientes selecionados e finalizada com um leve toque de manteiga e ervas frescas, essa massa promete uma experiência que conforta, encanta e surpreende a cada garfada.
+                    Experimente hoje mesmo e sinta o sabor que faz a diferença.<br/>
+                    Perfeito para o almoço, para renovar as energias, ou para um jantar especial. Bon appétit! 🍝✨
+                </p>
+            </figcaption>
         </figure>
+    </section>
+    <main id="menu">
+        <h2>Nosso Menu</h2>
+        <section>
+            <section id="pratoDescricao">
+                <img />
+                <p></p>
+            </section>
+            <aside>
+                <details>
+                    <summary><strong>Ingredientes</strong></summary>
+                    <ul id="ingredientes"></ul>
+                </details>
+                <h1 id="valor">R$ 28,90</h1>
+            </aside>
+        </section>
+        <div id="itemsMenu">
+            <template>
+                <a class="itemMenu"> Lasanha</a>
+            </template>
+        </div>
     </main>
+
+    <section id="reserva">
+        <h2>Faça sua reserva</h2>
+        <form onsubmit="sendForm(event)">
+            <fieldset>
+                <legend>Seus dados</legend>
+                <div>
+                    <label>Nome</label>
+                    <input name="nome" required/>
+                </div>
+                <div>
+                    <label>Contato</label>
+                    <input name="contato" required/>
+                </div>
+                <div>
+                    <label> <abbr>CIN</abbr> (Carteira de Identidade Nacional)</label>
+                    <input name="contato" required/>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Dados da Reserva</legend>
+                <div>
+                    <label>Mesa Específica (opcional)</label>
+                    <input name="mesa"/>
+                </div>
+                <div>
+                    <label>Pratos (opcional)</label>
+                    <textarea name="pratos"></textarea>
+                </div>
+                <div>
+                    <label>Horário</label>
+                    <input name="horario" required type="time" />
+                </div>
+            </fieldset>
+            <button>Enviar</button>
+        </form>
+    </section>
+
+    <table>
+        <caption>Últimas Reservas</caption>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Mesa</th>
+                <th>Horário</th>
+                <th>Pratos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>João Nuquim</td>
+                <td>07</td>
+                <td><time datetime="20:00">20:00</time></td>
+                <td>Lasanha à bolonhesa</td>
+            </tr>
+            <tr>
+                <td>Gabriel Salude</td>
+                <td></td>
+                <td><time datetime="20:00">20:00</time></td>
+                <td>Lasanha à bolonhesa</td>
+            </tr>
+            <tr>
+                <td>Miguel Grechen</td>
+                <td>07</td>
+                <td><time datetime="20:00">20:00</time></td>
+                <td>Canelone à Bolonhesa</td>
+            </tr>
+            <tr>
+                <td>Bernardo Mundi</td>
+                <td>08</td>
+                <td><time datetime="20:00">20:00</time></td>
+                <td>Lasanha à bolonhesa</td>
+            </tr>
+            <tr>
+                <td>Fernando Macro</td>
+                <td>01</td>
+                <td><time datetime="21:00">21:00</time></td>
+                <td>Lasanha à bolonhesa</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <section id="sobre">
+        <h2>Sobre</h2>
+        <div>
+            <img src="assets/entrada.png">
+            <p>
+                Fundado em 2016 por Joaquim Matias e Daniel Marcelo, nosso restaurante nasceu de um sonho simples: <mark>servir boa comida feita com carinho, ingredientes frescos e sabor de verdade.</mark><br/>
+                Tudo começou de forma modesta, em uma pequena cozinha onde as primeiras receitas foram testadas, ajustadas e aperfeiçoadas com dedicação e respeito à tradição. Com o tempo, o que era apenas um projeto familiar ganhou vida, conquistou clientes e se tornou um ponto de encontro para quem valoriza boa comida, acolhimento e atmosfera agradável.<br/>
+                Hoje, seguimos preservando esses valores, <em>honrando nossas origens e inovando com cuidado.</em> Cada prato que chega à mesa carrega um pouco da nossa história, do nosso trabalho e da nossa paixão por servir bem.<br/>
+                Seja bem-vindo — aqui, você é da casa!
+            </p>
+        </div>
+    </section>
+
+    <section id="fundadores">
+        <h2>Fundadores</h2>
+        <div>
+
+            <article class="fundadorCard">
+                <img src="assets/fundador1.jpeg" />
+                <h3>Joaquim Matias</h3>
+                <p>54 anos</p>
+            </article>
+            <article class="fundadorCard">
+                <img src="assets/fundador2.jpeg" />
+                <h3>Daniel Marcelo</h3>
+                <p>47 anos</p>
+            </article>
+        </div>
+    </section>
+    <footer>
+        <img src="assets/logo.png"/>
+        <h1>Massa Massa</h1>
+        <address>
+            <p>Rua das Flores, 342 - Mundópolis - MG</p>
+            <p>(00) 99999-9999</p>
+        </address>
+        <p>© 2016-2025 Massa Massa</p>
+    </footer>
+
+    <script>
+        const pratos = [
+            {
+                titulo:"Canelone à Bolonhesa",
+                descricao: `Nosso canelone é preparado artesanalmente, com uma massa leve e delicada que envolve um recheio cremoso e irresistível. Finalizado com nosso molho especial, cuidadosamente reduzido para concentrar os sabores, e um toque de parmesão gratinado para aquela casquinha dourada que conquista só de olhar.\n
+                    Uma receita que combina tradição, aconchego e muito sabor — perfeita para quem aprecia uma boa refeição feita com atenção aos detalhes.\n
+                    Venha saborear esse clássico feito do jeito certo. 🍽️✨`,
+                ingredientes: ["Massa de Lasanha", "Queijo Mozzarella", "Queijo Parmeggiano", "Presunto", "Molho à bolonhesa especial"],
+                imgUrl: "assets/canelone.png",
+                valor: "27,90"
+            },
+            {
+                titulo: "Lasanha à Bolonhesa",
+                descricao: `A clássica que nunca decepciona. Nossa lasanha é montada camada por camada com massa fresca, molho à bolonhesa cozido lentamente para extrair todo o sabor, e queijos selecionados que trazem cremosidade e equilíbrio.\n
+                    Finalizada no forno para alcançar aquela textura dourada e irresistível, é o prato perfeito para quem busca uma refeição reconfortante e cheia de aroma e sabor.\n
+                    Sinta o verdadeiro prazer de uma boa lasanha feita com alma. 🍷✨`,
+                ingredientes: ["Massa de Lasanha Artesanal", "Molho à Bolonhesa Especial", "Queijo Mozzarella", "Queijo Parmeggiano", "Toque de Ervas Frescas"],
+                imgUrl: "assets/lasanha-bolonhesa.png",
+                valor: "24,90"
+            },
+            {
+                titulo: "Ravioli Três Queijos",
+                descricao: `Delicados e cheios de sabor, nossos raviolis são recheados com uma harmoniosa combinação de três queijos selecionados. Cada mordida revela cremosidade e um toque suave que envolve o paladar.\n
+                    Servido com um molho leve que valoriza o recheio e finalizado com ervas frescas, esse prato é a escolha perfeita para quem aprecia uma experiência gastronômica elegante e aconchegante.\n
+                    Um convite ao prazer em cada garfada. 🍝✨`,
+                ingredientes: ["Massa Artesanal de Ravioli", "Queijo Brie", "Queijo Parmeggiano", "Mozzarella di Bufala", "Molho Especial da Casa"],
+                imgUrl: "assets/ravioli.png",
+                valor: "32,90"
+            }
+        ]
+
+        function update(prato){
+            const descricao = document.getElementById("pratoDescricao")
+            descricao.getElementsByTagName("img")[0].setAttribute("src", prato.imgUrl)
+            descricao.getElementsByTagName("p")[0].textContent=prato.descricao
+
+            document.getElementById("valor").textContent=`R$ ${prato.valor}`
+
+            const ingredientes = document.getElementById("ingredientes")
+            ingredientes.innerHTML=''
+            const ingredientesList = prato.ingredientes.forEach((i)=>{
+                const ingrediente = document.createElement("li")
+                ingrediente.textContent=i
+                ingrediente.setAttribute("class", "itemMenu")
+                ingredientes.appendChild(ingrediente)
+                
+            })
+        }
+
+        const itemsMenu = document.getElementById("itemsMenu")
+        pratos.forEach(prato=>{
+            console.log(prato)
+            const pratoA = document.createElement("a")
+            pratoA.textContent=prato.titulo
+            pratoA.setAttribute("class", "itemMenu")
+            pratoA.onclick=()=>{
+                pratoA.className+=" menuSelected"
+                update(prato)
+            }
+            itemsMenu.appendChild(pratoA)            
+        })
+
+        update(pratos[0])
+
+        function sendForm(e){
+            e.preventDefault()
+            alert("Pedido enviado ao restaurante")
+        }
+    </script>
 </body>
 </html>

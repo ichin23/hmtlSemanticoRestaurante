@@ -6,11 +6,17 @@
 
 :root{
     --primary: #4F341F;
+    --secondary: #ca7330;
     --background: #ffe9d9;
 }
 
 body{
     background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 header{
@@ -24,10 +30,14 @@ header{
     border-bottom: 1px solid var(--primary);
 }
 
+#showMenu{display: none;}
+label[for="showMenu"]{display: none;}
+
 #logoHeader {
     position: absolute;
     display: flex;
     left: 0;
+    top: 0;
     align-items: center;
     color: var(--primary);
     margin-right: auto;
@@ -35,7 +45,7 @@ header{
 
 #logoHeader>img{
     width: 80px;
-    padding: 20px 10px;
+    padding: 10px 10px;
 }
 header > nav {
     display: flex;
@@ -65,28 +75,258 @@ header>nav>div>a{
 
 #pratoDia{
     display: flex;
+    max-width: 1512px;
     flex-direction: column;
     align-items: center;
     padding: 30px 20px;
+    background-color: var(--secondary);
+    border-radius: 12px;
+    margin: 12px;
 }
 
 #pratoDia > h2 {
     padding: 20px;
+    font-size: 30px;
 }
 
 #pratoDia > figure {
     display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
     gap: 20px;
 }
 #pratoDia > figure > img {
     border-radius: 12px;
+    width: 80vw;
+    max-width: 300px;
 }
+
 #pratoDia > figure > figcaption {
-    border: 1px solid var(--primary);
     padding: 12px;
+    border-radius: 12px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+}
+
+main > section{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 1512px;
+}
+
+main aside{
+    padding: 30px;
+    border-left: 1px solid var(--primary);
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+aside > ul{
+    flex: 1 0 auto;
+}
+
+#pratoDescricao{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+
+
+#pratoDescricao > img{
+    height: 400px;
+    width: 100vw;
+    max-width: 500px;
+}
+
+#pratoDescricao p{
+    white-space: pre-line;
+    max-width: 600px;
+}
+
+#itemsMenu{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 30px;
+}
+
+#itemsMenu > a{
+    padding: 20px 30px;
+    cursor: pointer;
+    border-radius: 12px;
+    color: var(--secondary)
+}
+
+.menuSelected{
+    background-color: var(--primary);
+}
+
+#reserva{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    max-width: 1512px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+form>fieldset{
+    margin: 12px;
+}
+
+form>fieldset>div{
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+
+input, textarea{
+    width: 90vw;
+    height: 40px;
+    max-width: 600px;
+    border: none;
+    border-radius: 8px;
+    margin: 12px 0px;
+    padding: 8px;
+}
+
+button{
+    width: 80vw;
+    max-width: 600px;
+    border: none;
+    background-color: var(--secondary);
+    color: #ffe9d9;
+    padding: 20px;
     border-radius: 12px;
 }
 
-main > hgroup > p{
-    font-size: 20px;
+table{
+    width: 90vw;
+    max-width: 1000px;
+    text-align: center;
+    border: 1px solid var(--primary);
+    margin: 30px;
+}
+
+#sobre{
+    max-width: 1512px;
+    margin: 12px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary);
+    color: #ffe9d9;
+    border-radius: 12px;
+}
+
+#sobre > div{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#sobre img {
+    height: 400px;
+    border-radius: 12px;
+}
+
+#sobre p{
+    max-width: 700px;
+}
+
+#fundadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+#fundadores >div {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.fundadorCard img{
+    height: 200px;
+}
+
+footer{
+    width: 100vw;
+    min-height: 100px;
+    background-color: var(--secondary);
+    padding: 30px;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer > img{
+    width: 100px;
+}
+
+@media (max-width: 1000px){
+    header{
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    #pratoDia, #sobre{
+        max-width: none;
+        width: 90vw;
+    }
+
+    header>div{
+        display: flex;
+        align-items: center;
+        width: 90vw;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    
+    header > nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    label[for="showMenu"]{display: block;}
+
+    #logoHeader{
+        position: static;
+    }
+    #showMenu:checked ~ #navMenu{
+        display: flex;
+    }
+
+}
+
+@media (max-width: 1440px) {
+    main aside{
+        border-left: 0px solid;
+    }
 }
