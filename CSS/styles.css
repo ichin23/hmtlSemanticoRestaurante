@@ -17,6 +17,7 @@ body{
     align-items: center;
     width: 100vw;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -47,7 +48,7 @@ label[for="showMenu"]{display: none;}
     width: 80px;
     padding: 10px 10px;
 }
-header > nav {
+header > nav > ul {
     display: flex;
     gap: 30px;
 }
@@ -62,15 +63,59 @@ a:hover ~ hr{
     width: 100%;
 }
 
-nav>div{
+nav li{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-header>nav>div>a{
+nav a{
     text-decoration: none;
     color: var(--primary);
+}
+
+#apresentacao{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: var(--primary);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+
+#apresentacao> div{
+    flex: 2 1 auto;
+    color: #ffe9d9;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#apresentacao > div> h2{
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+#apresentacao > div> p{
+    max-width: 50%;
+}
+
+#apresentacao > img{
+    width: 100vw;
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+
+}
+
+#apresentacao > div> a{
+    margin-top: 50px;
+    background-color: var(--secondary);
+    border-radius: 12px;
+    padding: 20px 30px;
+    color: #ffe9d9;
+    text-decoration: none;
 }
 
 #pratoDia{
@@ -114,6 +159,7 @@ main{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    width: 100vw;
     padding: 20px;
 }
 
@@ -130,6 +176,7 @@ main aside{
     border-left: 1px solid var(--primary);
     display: flex;
     flex-flow: column nowrap;
+    flex: 1 2 auto;
 }
 
 aside > ul{
@@ -145,10 +192,15 @@ aside > ul{
     padding: 20px;
 }
 
+#pratoDescricao>div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 #pratoDescricao > img{
-    height: 400px;
-    width: 100vw;
+    height: auto;
+    width: 80vw;
     max-width: 500px;
 }
 
@@ -157,10 +209,15 @@ aside > ul{
     max-width: 600px;
 }
 
+#pratoDescricao h3{
+    font-size: 2em;
+    color: var(--secondary)
+}
+
 #itemsMenu{
     display: flex;
     justify-content: center;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     gap: 30px;
 }
 
@@ -168,7 +225,8 @@ aside > ul{
     padding: 20px 30px;
     cursor: pointer;
     border-radius: 12px;
-    color: var(--secondary)
+    color: var(--secondary);
+    text-align: center;
 }
 
 .menuSelected{

@@ -8,40 +8,65 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menu" />
 </head>
 <body>
+
+    <!--Tag que indica o cabeçalho da página, usei para fazer logo e navegação, ajuda no SEO entender as páginas que o site proporciona-->
     <header>
-        <input id="showMenu" type="checkbox"/>
+        <input id="showMenu" type="checkbox" aria-describedby="showMenu"/>
+
+        <!--Como é um agrupamento exclusivamente para ajuste no CSS utilizei a div-->
         <div>
-            <div id="logoHeader">
+            <div id="logoHeader" role="logo">
                 <img src="assets/logo.png" />
                 <h1>Massa Massa</h1>
             </div>
-            <label for="showMenu">
+            <label for="showMenu" aria-label="Abrir Menu">
                 <span class="material-symbols-outlined">menu</span>
             </label>
         </div>
+
+        <!--Indicação do menu de navegação da página faz com que leitores de tela e mecanismos de busca identifiquem essa seção diretamente relacionada as navegações que o usuário pode fazer-->
         <nav id="navMenu">
-            <div>
-                <a href="#pratoDia">Prato do Dia</a>
-                <hr />
-            </div>
-            <div>
-                <a href="#menu">Menu</a>
-                <hr />
-            </div>
-            <div>
-                <a href="#sobre">Sobre</a>
-                <hr />
-            </div>
-            <div>
-                <a href="#fundadores">Fundadores</a>
-                <hr />
-            </div>
+            <ul>
+                <li>
+                    <a href="#pratoDia">Prato do Dia</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="#menu">Menu</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                    <hr />
+                </li>
+                <li>
+                    <a href="#fundadores">Fundadores</a>
+                    <hr />
+                </li>
+            </ul>
         </nav>
     </header>
+
+    <!--tag que separa as diferentes seções do site, essa indica a Seção que apresenta o usuário ao restaurante, ajuda no SEo para entender a estrutura da página-->
+    <section id="apresentacao">
+        <img src="assets/canelone.png" />
+        <div role="presentation">
+            <h2>Bem vindos à verdadeira experiência da cozinha italiana</h2>
+            <p>Sabores que atravessam gerações, preparados com ingredientes frescos e o calor de uma mesa que celebra a boa comida. Aqui, cada prato é feito com cuidado, cada detalhe é pensado, e cada momento é para ser lembrado.</p>
+            <a href="#reserva">Faça sua reserva</a>
+        </div>
+        <img src="assets/pappardelle.png"/>
+    </section>
+
+    <!--Primeira seção da página que indica o prato do dia-->
     <section id="pratoDia">
         <h2>Prato do Dia</h2>
+
+        <!--Tag para mostrar uma  com detalhes de descrição com um título e uma descrição mais completa ajuda na acessibilidade identificar o que aquela imagem quer representar-->
         <figure>
             <img src="assets/tortellini.png" alt="Prato Tortellini Três Queijos" />
+
+            <!--Indica as informações da imagem-->
             <figcaption>
                 <h2>Tortellini Três Queijos</h2>
                 <p>Nosso prato do dia é aquela massa caprichada com o toque mágico dos Três Queijos (Brie, Parmeggiano e Mozzarella di Bufala). Uma combinação cremosa, rica em sabor e com a textura perfeita para quem aprecia uma refeição memorável.<br/>
@@ -52,33 +77,44 @@
             </figcaption>
         </figure>
     </section>
+
+    <!--Tag main demonstra a principal seção da página, a seção que considerei a principal da página, que seria o menu completo-->
     <main id="menu">
         <h2>Nosso Menu</h2>
+
         <section>
-            <section id="pratoDescricao">
+            <!--Article indica um card relevante que possui conteúdo suficiente independente, melhora o entendimento do conteúdo por SEO e acessibilidade entende que é um trecho a ser lido-->
+            <article id="pratoDescricao">
                 <img />
-                <p></p>
-            </section>
-            <aside>
-                <details>
-                    <summary><strong>Ingredientes</strong></summary>
-                    <ul id="ingredientes"></ul>
-                </details>
-                <h1 id="valor">R$ 28,90</h1>
-            </aside>
+                <div role="details">
+                    <p></p>
+
+                    <!--Tag que pode mostrar/ocultar um conteúdo, tem funcionamento com teclado e leitores anunciam ser expansíveis-->
+                    <details>
+                        <summary><strong>Ingredientes</strong></summary>
+                        <ul id="ingredientes"></ul>
+                    </details>
+                    <h3 id="valor">R$ 28,90</h3>
+                </div>
+            </article>
+            <!--Parte lateral para selecionar o prato-->
+            <aside id="itemsMenu"></aside>
         </section>
-        <div id="itemsMenu">
-            <template>
-                <a class="itemMenu"> Lasanha</a>
-            </template>
-        </div>
+        
     </main>
 
+    <!--Seção do formulário de reserva de horário-->
     <section id="reserva">
         <h2>Faça sua reserva</h2>
+
+        <!--Tag form indica um formulário da página-->
         <form onsubmit="sendForm(event)">
+            <!--Indica uma seção, agrutamento de entradas do formulário. Ajuda na acessibilidade indicar o que vai ser preenchido-->
             <fieldset>
+                <!--Descrição da seção-->
                 <legend>Seus dados</legend>
+
+                <!--Div para alinhamento do CSS-->
                 <div>
                     <label>Nome</label>
                     <input name="nome" required/>
@@ -88,12 +124,18 @@
                     <input name="contato" required/>
                 </div>
                 <div>
-                    <label> <abbr>CIN</abbr> (Carteira de Identidade Nacional)</label>
+                    <label> <abbr title="Carteira de Identidade Nacional">CIN</abbr></label>
                     <input name="contato" required/>
                 </div>
             </fieldset>
+
+            <!--Indica uma seção, agrutamento de entradas do formulário. Ajuda na acessibilidade indicar o que vai ser preenchido-->
             <fieldset>
+
+                <!--Descrição da seção-->
                 <legend>Dados da Reserva</legend>
+
+                <!--Div para alinhamento do CSS-->
                 <div>
                     <label>Mesa Específica (opcional)</label>
                     <input name="mesa"/>
@@ -111,8 +153,13 @@
         </form>
     </section>
 
+    <!--Tabela de reserva de horários, ajuda na acessibilidade a identificar como os dados estão relacionados e o que significam-->
     <table>
+
+        <!--Descrição da tabela-->
         <caption>Últimas Reservas</caption>
+
+        <!--Cabeçalho da tabela, onde a acessibilidade entende o que são os dados do tbody-->
         <thead>
             <tr>
                 <th>Nome</th>
@@ -121,6 +168,8 @@
                 <th>Pratos</th>
             </tr>
         </thead>
+
+        <!--Corpo da tabela indicando os dados-->
         <tbody>
             <tr>
                 <td>João Nuquim</td>
@@ -154,16 +203,18 @@
             </tr>
             
         </tbody>
+        <!--Rodapé da tabela com uma informação adicional-->
         <tfoot>
             <tr>
-                <td colspan="4">Fechamos às 00h</td>
+                <td colspan="4"><strong>Fechamos às 00h</strong></td>
             </tr>
         </tfoot>
     </table>
     
+    <!--Seção de descrição da empresa-->
     <section id="sobre">
         <h2>Sobre</h2>
-        <div>
+        <div aria-label="Sobre a Empresa">
             <img src="assets/entrada.png">
             <p>
                 Fundado em 2016 por Joaquim Matias e Daniel Marcelo, nosso restaurante nasceu de um sonho simples: <mark>servir boa comida feita com carinho, ingredientes frescos e sabor de verdade.</mark><br/>
@@ -174,25 +225,28 @@
         </div>
     </section>
 
+    <!--Seção dos fundadores da empresa-->
     <section id="fundadores">
         <h2>Fundadores</h2>
-        <div>
-
-            <article class="fundadorCard">
+        <div aria-label="Fundadores">
+            <div class="fundadorCard">
                 <img src="assets/fundador1.jpeg" />
                 <h3>Joaquim Matias</h3>
                 <p>54 anos</p>
-            </article>
-            <article class="fundadorCard">
+            </div>
+            <div class="fundadorCard">
                 <img src="assets/fundador2.jpeg" />
                 <h3>Daniel Marcelo</h3>
                 <p>47 anos</p>
-            </article>
+            </div>
         </div>
     </section>
+    <!--Indica o rodapé, fim da página. Ajuda SEO a buscar infomrações sobre o site-->
     <footer>
         <img src="assets/logo.png"/>
         <h1>Massa Massa</h1>
+
+        <!--Mostra informações de contato, endereço, autor-->
         <address>
             <p>Rua das Flores, 342 - Mundópolis - MG</p>
             <p>(00) 99999-9999</p>
@@ -238,6 +292,7 @@
 
             document.getElementById("valor").textContent=`R$ ${prato.valor}`
 
+            descricao.setAttribute("aria-label", `Prato ${prato.titulo} de massa`)
             const ingredientes = document.getElementById("ingredientes")
             ingredientes.innerHTML=''
             const ingredientesList = prato.ingredientes.forEach((i)=>{
